@@ -1,6 +1,6 @@
 #include "player.h"
 
-Player::Player(float posx, float posy, std::string * map) : Entity("player", posx, posy, "\0")
+Player::Player(float posx, float posy, Map * map) : Entity::Entity("player", posx, posy, "\0")
 {
 	if (agk::GetObjectExists(getID()))
 		agk::DeleteObject(getID());
@@ -35,9 +35,9 @@ void Player::Update()
 
 	setPosition(agk::GetCameraX(1), agk::GetCameraZ(1));
 
-	agk::PrintC((int)getPosX());
-	agk::PrintC(",");
-	agk::PrintC((int)getPosY());
+	//agk::PrintC((int)getPosX());
+	//agk::PrintC(",");
+	//agk::PrintC((int)getPosY());
 }
 
 float Player::GetMouseX()

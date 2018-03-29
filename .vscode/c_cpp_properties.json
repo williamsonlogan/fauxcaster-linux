@@ -38,6 +38,7 @@
                 "/home/logan/.local/share/Steam/steamapps/common/App Game Kit 2/Tier2/common/Collision/",
                 "/home/logan/.local/share/Steam/steamapps/common/App Game Kit 2/Tier2/common/include/",
                 "/home/logan/.local/share/Steam/steamapps/common/App Game Kit 2/Tier2/bullet/",
+                "${workspaceRoot}",
                 "${workspaceRoot}"
             ],
             "defines": [],

@@ -2,16 +2,33 @@
 
 #include "agk.h"
 #include <iostream>
+#include <fstream>
 
 class Map
 {
-public:
+  public:
 	Map(std::string filePath)
 	{
+		std::ifstream inFile;
+		inFile.open(filePath);
 
+		std::string read;
+
+		std::getline(inFile, read);
+
+		_width = atoi(read.c_str());
+
+		std::getline(inFile, read);
+
+		_height = atoi(read.c_str());
+
+		while(std::getline(inFile, read))
+		{
+			_map += read;
+		}
+
+		inFile.close();
 	}
-
-	~Map() = default;
 
 	char GetTile(int x, int y)
 	{
@@ -27,8 +44,11 @@ public:
 			_map[y * _width + x] = c;
 	}
 
-private:
+	int getWidth() { return _width; }
+	int getHeight() { return _height; }
+
+  private:
 	std::string _map;
-	int _height;
 	int _width;
+	int _height;
 };

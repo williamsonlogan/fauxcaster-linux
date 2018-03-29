@@ -6,6 +6,7 @@
 class Entity
 {
 public:
+	Entity() = default;
 	Entity(std::string tag, float posx, float posy, std::string texturePath)
 	{
 		_tag = tag;
